@@ -1,4 +1,4 @@
-# Cluster data
+# Cluster data.
 data "aws_eks_cluster" "cluster" {
   name = "demo"
 }
@@ -12,7 +12,7 @@ data "kubectl_file_documents" "namespace" {
   content = file("${path.module}/manifests/namespace.yaml")
 }
 
-# Argo CRD installation
+# Argo CRD installation.
 data "kubectl_file_documents" "argocd" {
   content = file("${path.module}/manifests/install.yaml")
 }
