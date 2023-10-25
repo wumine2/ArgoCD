@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com//.git
+    repoURL: https://github.com/wumine2/argocd-test.git
     targetRevision: HEAD
     path: prod
   destination:
