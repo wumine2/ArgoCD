@@ -7,9 +7,9 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/wumine2/argocd-test.git
+    repoURL: https://github.com/wumine2/argocd-test.git #This is the url of the repo we want argocd to monitor
     targetRevision: HEAD
-    path: prod
+    path: prod #inside the git repo, this is where the yaml file can be located.
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
@@ -19,5 +19,5 @@ spec:
       - CreateNamespace=true
 
     automated:
-      selfHeal: true
-      prune: true
+      selfHeal: true #argocd will recreate a deleted pod
+      prune: true #if a pod is added in the cluster and there is no manifest for it in the repository, argocd will delete the pod. The repository is the only source of truth
